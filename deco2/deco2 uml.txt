@@ -1,0 +1,21 @@
+class Food {
+    description
+    getDescription()
+    cost()
+}
+Food <|-- Ramen
+Food <|-- Jeyookbokeum
+Food <|-- Kimbap
+Food <|-- Kimchibokeumbap
+Food <|-- Ingredients
+Food <-- Ingredients
+Ingredients <|-- Pig
+Ingredients <|-- Gochujang	
+Ingredients <|-- Yangpa
+Ingredients <|-- Ggae
+Ingredients <|-- Kim
+Ingredients <|-- Danmooji
+Ingredients <|-- Rice
+Ingredients <|-- Kimchi
+Ingredients <|-- Egg
+@enduml
