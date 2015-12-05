@@ -1,0 +1,4 @@
+1번 - factory
+2번 - method
+3번 - abspotato
+4번 - figure

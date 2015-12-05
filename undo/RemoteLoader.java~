@@ -1,0 +1,56 @@
+package com.j2.command.undo;
+
+public class RemoteLoader {
+ 
+ public static void main(String[] args) {
+  RemoteControlWithUndo remoteControl = new RemoteControlWithUndo();
+ 
+  Light livingRoomLight = new Light("Living Room");
+
+  LightOnCommand livingRoomLightOn = new LightOnCommand(livingRoomLight);
+  LightOffCommand livingRoomLightOff = new LightOffCommand(livingRoomLight);
+
+  remoteControl.setCommand(0, livingRoomLightOn, livingRoomLightOff);
+ 
+  remoteControl.onButtonWasPressed(0);
+  remoteControl.offButtonWasPressed(0);
+  System.out.println(remoteControl);
+  remoteControl.undoButtonWasPressed();
+  remoteControl.offButtonWasPressed(0);
+  remoteControl.onButtonWasPressed(0);
+  System.out.println(remoteControl);
+  remoteControl.undoButtonWasPressed();
+  
+  DVD dvd = new DVD("DVD player");
+
+  DVDOnCommand DVDOn = new DVDOnCommand(dvd);
+  DVDOffCommand DVDOff = new DVDOffCommand(dvd);
+
+  remoteControl.setCommand(0, DVDOn, DVDOff);
+ 
+  remoteControl.onButtonWasPressed(0);
+  remoteControl.offButtonWasPressed(0);
+  System.out.println(remoteControl);
+  remoteControl.undoButtonWasPressed();
+  remoteControl.offButtonWasPressed(0);
+  remoteControl.onButtonWasPressed(0);
+  System.out.println(remoteControl);
+  remoteControl.undoButtonWasPressed();
+  
+  Door door = new Door("Garage Door");
+
+  DoorOpenCommand dooropen = new DoorOpenCommand(door);
+  DoorCloseCommand doorclose = new DoorCloseCommand(door);
+
+  remoteControl.setCommand(0, dooropen, doorclose);
+ 
+  remoteControl.onButtonWasPressed(0);
+  remoteControl.offButtonWasPressed(0);
+  System.out.println(remoteControl);
+  remoteControl.undoButtonWasPressed();
+  remoteControl.offButtonWasPressed(0);
+  remoteControl.onButtonWasPressed(0);
+  System.out.println(remoteControl);
+  remoteControl.undoButtonWasPressed();
+ }
+}
